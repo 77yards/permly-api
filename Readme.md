@@ -24,7 +24,7 @@ API Actions
 
 Authentication
 
-For using perm.ly API, you need to setup a api key on <a href="http://www.permly.com">permly</a>, which is free
+For using perm.ly API, you need to setup a API Key on <a href="http://www.permly.com">permly</a>, which is free
 
 Help us make it better
 
