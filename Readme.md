@@ -5,16 +5,16 @@ The perm.ly API is implemented for json encoded data input and output from api. 
 
 Wrappers
 
-    <a href="https://github.com/77yards/permly-api/php-wrapper">PHP API Wrapper</a>
+<a href="https://github.com/77yards/permly-api/tree/master/php-wrapper">PHP API Wrapper</a>
 
 API Actions
 
-    <a href="https://github.com/77yards/permly-api/api-actions/getUser.md">getUser</a>
-    <a href="https://github.com/77yards/permly-api/api-actions/getMyLinks.md">getMyLinks</a>
-    <a href="https://github.com/77yards/permly-api/api-actions/getLinkByTarget.md">getLinkByTarget</a>    
-    <a href="https://github.com/77yards/permly-api/api-actions/saveLink.md">saveLink</a>        
-    <a href="https://github.com/77yards/permly-api/api-actions/deleteLink.md">deleteLink</a>            
-    <a href="https://github.com/77yards/permly-api/api-actions/deleteLinkByKey.md">deleteLinkByKey</a>                
+<a href="https://github.com/77yards/permly-api/tree/master/api-actions/getUser.md">getUser</a>
+<a href="https://github.com/77yards/permly-api/tree/master/api-actions/getMyLinks.md">getMyLinks</a>
+<a href="https://github.com/77yards/permly-api/tree/master/api-actions/getLinkByTarget.md">getLinkByTarget</a>    
+<a href="https://github.com/77yards/permly-api/tree/master/api-actions/saveLink.md">saveLink</a>        
+<a href="https://github.com/77yards/permly-api/tree/master/api-actions/deleteLink.md">deleteLink</a>            
+<a href="https://github.com/77yards/permly-api/tree/master/api-actions/deleteLinkByKey.md">deleteLinkByKey</a>                
     
 
 Authentication
