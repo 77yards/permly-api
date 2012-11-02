@@ -2,8 +2,6 @@
 /**
  * API library - it allows to process all api calls
  *
- *
- * @author	Pradeep Singh
  * @copyright	77yards
  *
  * @version	1.0
