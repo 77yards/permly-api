@@ -15,7 +15,9 @@ $result = $server->getMyLinks();
 Alos if you have short url key, then you can use this action in this way
 
 $data = array(
+
 	'link_search_term' => 'xyzabc' // this is short url key
+	
 );
 
 $result = $server->getMyLinks($data);
