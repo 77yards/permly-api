@@ -1,10 +1,10 @@
 <H1>Get My Links<H1>
 
-This action, will allow you to retrieve details of all your links.
+This action will allow you to retrieve details of all your links.
 
 By using php-wrapper class, you can send request in this way:
 
-Create a object of php wrapper class of perm.ly API
+Create an object of php wrapper class of perm.ly API
 
 $server = new permly_api(); 
 
@@ -21,3 +21,13 @@ $data = array(
 );
 
 $result = $server->getMyLinks($data);
+
+<H2>Example<H2>
+
+<I>Sending Request</I>
+
+$result = $server->getMyLinks();
+
+<I>Output</I>
+
+{"data":[{"prim_uid":"230","account":"1416","url_key":"abc-com-official-site-of","target":"http:\/\/www.abc.com","multi_language":"0","track":"1","no_redirect":"1","favorite":"0","valid_from":0,"valid_until":0,"valid_from_ts":0,"valid_until_ts":0,"google_page_key":"","created_on":"11\/02\/2012","modified_on":"11\/02\/2012 11:20","count":"0"},{"prim_uid":"231","account":"1416","url_key":"abc-com-official-site-of-the","target":"http:\/\/www.abc.com","multi_language":"0","track":"1","no_redirect":"1","favorite":"0","valid_from":0,"valid_until":0,"valid_from_ts":0,"valid_until_ts":0,"google_page_key":"","created_on":"11\/02\/2012","modified_on":"11\/02\/2012 11:30","count":"0"}],"total-records":"2"}
