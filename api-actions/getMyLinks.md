@@ -30,4 +30,40 @@ $result = $server->getMyLinks();
 
 <I>Output</I>
 
-{"data":[{"prim_uid":"230","account":"1416","url_key":"abc-com-official-site-of","target":"http:\/\/www.abc.com","multi_language":"0","track":"1","no_redirect":"1","favorite":"0","valid_from":0,"valid_until":0,"valid_from_ts":0,"valid_until_ts":0,"google_page_key":"","created_on":"11\/02\/2012","modified_on":"11\/02\/2012 11:20","count":"0"},{"prim_uid":"231","account":"1416","url_key":"abc-com-official-site-of-the","target":"http:\/\/www.abc.com","multi_language":"0","track":"1","no_redirect":"1","favorite":"0","valid_from":0,"valid_until":0,"valid_from_ts":0,"valid_until_ts":0,"google_page_key":"","created_on":"11\/02\/2012","modified_on":"11\/02\/2012 11:30","count":"0"}],"total-records":"2"}
+{ "data" : [ { "account" : "1416",
+        "count" : "0",
+        "created_on" : "11/02/2012",
+        "favorite" : "0",
+        "google_page_key" : "",
+        "modified_on" : "11/02/2012 11:20",
+        "multi_language" : "0",
+        "no_redirect" : "1",
+        "prim_uid" : "230",
+        "target" : "http://www.abc.com",
+        "track" : "1",
+        "url_key" : "abc-com-official-site-of",
+        "valid_from" : 0,
+        "valid_from_ts" : 0,
+        "valid_until" : 0,
+        "valid_until_ts" : 0
+      },
+      { "account" : "1416",
+        "count" : "0",
+        "created_on" : "11/02/2012",
+        "favorite" : "0",
+        "google_page_key" : "",
+        "modified_on" : "11/02/2012 11:30",
+        "multi_language" : "0",
+        "no_redirect" : "1",
+        "prim_uid" : "231",
+        "target" : "http://www.abc.com",
+        "track" : "1",
+        "url_key" : "abc-com-official-site-of-the",
+        "valid_from" : 0,
+        "valid_from_ts" : 0,
+        "valid_until" : 0,
+        "valid_until_ts" : 0
+      }
+    ],
+  "total-records" : "2"
+}
