@@ -1,4 +1,4 @@
-<H1>Get My Links<H1>
+<H1>Get My Links</H1>
 
 This action will allow you to retrieve details of all your links.
 
@@ -14,22 +14,24 @@ $result = $server->getMyLinks();
 
 Alos if you have short url key, then you can use this action in this way
 
+<pre>
 $data = array(
 
 	'link_search_term' => 'xyzabc' // this is short url key
 	
 );
+</pre>
 
 $result = $server->getMyLinks($data);
 
-<H2>Example<H2>
-
+<H2>Example</H2>
 <I>Sending Request</I>
 
 $result = $server->getMyLinks();
 
 <I>Output</I>
 
+<pre>
 { "data" : [ { "account" : "1416",
         "count" : "0",
         "created_on" : "11/02/2012",
@@ -67,3 +69,4 @@ $result = $server->getMyLinks();
     ],
   "total-records" : "2"
 }
+</pre>
