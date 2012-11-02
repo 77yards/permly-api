@@ -11,6 +11,7 @@ $server = new permly_api();
 This will return details of all links saved in your account
 
 $data = array(
+
 	'target' => 'http://abcxyz.com', // target url, for which you want to generate short link
 	
 	'no_redirect' => 0, // set it 0, if you want to hide target url
