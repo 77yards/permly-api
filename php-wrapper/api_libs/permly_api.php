@@ -9,7 +9,6 @@
  * @version	1.0
  */
 
-
 class permly_api {
 	var $url;
 	var $action;

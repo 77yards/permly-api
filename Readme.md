@@ -1,4 +1,4 @@
-perm.ly API
+<b>perm.ly API</b>
 
 The perm.ly API is implemented for json encoded data input and output from api. All .
 
@@ -9,11 +9,16 @@ Wrappers
 
 API Actions
 
-<a href="https://github.com/77yards/permly-api/tree/master/api-actions/getUser.md">getUser</a>
+<a href="https://github.com/77yards/permly-api/tree/master/api-actions/getUser.md">getUser</a>.
+
 <a href="https://github.com/77yards/permly-api/tree/master/api-actions/getMyLinks.md">getMyLinks</a>
+
 <a href="https://github.com/77yards/permly-api/tree/master/api-actions/getLinkByTarget.md">getLinkByTarget</a>    
+
 <a href="https://github.com/77yards/permly-api/tree/master/api-actions/saveLink.md">saveLink</a>        
+
 <a href="https://github.com/77yards/permly-api/tree/master/api-actions/deleteLink.md">deleteLink</a>            
+
 <a href="https://github.com/77yards/permly-api/tree/master/api-actions/deleteLinkByKey.md">deleteLinkByKey</a>                
     
 

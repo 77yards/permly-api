@@ -4,7 +4,6 @@ include_once('api_libs/permly_api.php'); // include api wrapper class
 $server = new permly_api(); // create object of wrapper class
 
 // return complete data of user and its related accounts
-
 //$result = $server->getUser();
 //print_r(json_decode($result));
 
