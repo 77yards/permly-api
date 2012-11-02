@@ -1,6 +1,6 @@
 <H1>perm.ly API</H1>
 
-The perm.ly API is implemented for json encoded data input and output from api. All .
+The perm.ly API is implemented for JSON encoded data input and output from API. 
 
 
 Wrappers
