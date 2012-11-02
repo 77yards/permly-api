@@ -21,7 +21,7 @@ The perm.ly API is implemented for JSON encoded data input and output from API.
 
 <h2>Authentication</h2>
 
-For using perm.ly API, you need to setup a API Key on <a href="http://www.permly.com">permly</a>, which is free.
+For using perm.ly API, you need to setup a API Key on <a href="http://www.permly.com">perm.ly</a>, which is free.
 
 <h2>Help us make it better!</h2>
 
