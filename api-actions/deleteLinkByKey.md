@@ -11,3 +11,4 @@ $server = new permly_api();
 If you know the short key of your link, you can delete it in this way. 
 
 $result = $server->deleteLinkByKey('xyz');
+
