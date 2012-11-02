@@ -10,4 +10,4 @@ $server = new permly_api();
 
 This will return details of all links saved in your account
 
-$result = $server->getLinkByTarget('http://abcxyz.com');
+$result = $server->getLinkByTarget(-- Any target url which you have saved by using <a href="https://github.com/77yards/permly-api/tree/master/api-actions/saveLink.md">saveLink</a> --);
