@@ -1,4 +1,4 @@
-<b>perm.ly API</b>
+<H1>perm.ly API</H1>
 
 The perm.ly API is implemented for json encoded data input and output from api. All .
 

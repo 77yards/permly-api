@@ -1,4 +1,4 @@
-<H1>GetUser<H1>
+<H1>Get User<H1>
 
 This action, will allow you to retrieve all details of your user associated with API key.
 
