@@ -7,6 +7,8 @@
  * @version	1.0
  */
 
+if(!defined('JSON_UNESCAPED_UNICODE')) define('JSON_UNESCAPED_UNICODE', 256);
+
 class permly_api {
 	var $url;
 	var $action;
@@ -65,8 +67,8 @@ class permly_api {
 	 * 
 	 * @return	string
 	 */
-	function _json_encode($data, $options = 0) {
-		return json_encode($data, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP);
+	function _json_encode($data) {
+		return json_encode($data, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
 	}
 
 	/**
@@ -75,7 +77,7 @@ class permly_api {
 	 * @return	mixed
 	 */
 	function _json_decode($data, $assoc = false) {
-		return json_decode($data, $assoc, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP);
+		return json_decode($data, $assoc, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
 	}	
 	
 	
