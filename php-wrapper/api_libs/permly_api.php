@@ -47,6 +47,9 @@ class permly_api {
 		
 		$url = $this->_build_url();
 
+		if(!isset($postdata['ip_address'])) $postdata['ip_address'] = $this->_get_client_ip();
+		if(!isset($postdata['user_agent'])) $postdata['user_agent'] = $this->_get_client_user_agent();
+
 		$ch = curl_init($url);
 
 		curl_setopt($ch, CURLOPT_POST      ,1);
@@ -60,7 +63,34 @@ class permly_api {
 		$return_data = curl_exec($ch);
 
 		return $return_data;
-	}	
+	}
+
+	/**
+	 * Return Client IP.
+	 *
+	 * @return	string
+	 */
+	function _get_client_ip() {
+		if(isset($_SERVER['REMOTE_ADDR'])) {
+			return $_SERVER['REMOTE_ADDR'];
+		} elseif(isset($_SERVER['HTTP_FROM'])) {
+			return $_SERVER['HTTP_FROM'];
+		} elseif(isset($_SERVER['HTTP_CLIENT_IP'])) {
+			return $_SERVER['HTTP_CLIENT_IP'];
+		} elseif(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+			return $_SERVER['HTTP_X_FORWARDED_FOR'];
+		}
+		return '';
+	}
+
+	/**
+	 * Return Client User Agent.
+	 *
+	 * @return	string
+	 */
+	function _get_client_user_agent() {
+		return isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+	}
 		
 	/**
 	 * Encoded array in json data
