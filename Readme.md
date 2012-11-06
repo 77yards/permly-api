@@ -1,22 +1,11 @@
 <H1>perm.ly API</H1>
 
-<<<<<<< HEAD
 The perm.ly API is implemented for JSON encoded data input and output from API. 
 <br/>
 
 <a href="https://github.com/77yards/permly-api/tree/master/php-wrapper">PHP API Wrapper</a>
 
 <h2>API Actions</h2>
-=======
-The perm.ly API is implemented for json encoded data input and output from api. All .
-
-
-<b>Wrappers</b>
-
-<a href="https://github.com/77yards/permly-api/tree/master/php-wrapper">PHP API Wrapper</a>
-
-<b>API Actions</b>
->>>>>>> permly_api
 
 <a href="https://github.com/77yards/permly-api/tree/master/api-actions/getUser.md">getUser</a>.
 
@@ -30,11 +19,7 @@ The perm.ly API is implemented for json encoded data input and output from api. 
 
 <a href="https://github.com/77yards/permly-api/tree/master/api-actions/deleteLinkByKey.md">deleteLinkByKey</a>                
 
-<<<<<<< HEAD
 <h2>Authentication</h2>
-=======
-<b>Authentication</b>
->>>>>>> permly_api
 
 For using perm.ly API, you need to setup a API Key on <a href="http://www.permly.com">perm.ly</a>, which is free.
 
@@ -42,7 +27,7 @@ For using perm.ly API, you need to setup a API Key on <a href="http://www.permly
 
 Please share your views or suggestions to make it better. Please write your suggestion to hello@77yards.com
 
-<b>Error codes</b>
+<h2>Error codes</h2>
 
 API sends following error codes at different occasions.
 
