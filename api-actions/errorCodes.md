@@ -2,9 +2,9 @@
 
 1000 - Action is not supported by API
 
-1050 - some required data is missing
+1050 - Some required data is missing
 
-1060 - if input encoded data is not valid
+1060 - Encoded data in send request is not valid
 
 1100 - No valid permly account is associated with API Key
 
