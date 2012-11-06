@@ -40,7 +40,7 @@
 
 2050 - Invalid user session token
 
-2060 - user is inactive
+2060 - User is inactive
 
 2080 - Invalid Application
 
