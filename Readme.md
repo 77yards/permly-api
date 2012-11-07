@@ -29,4 +29,4 @@ Please share your views or suggestions to make it better. Please write your sugg
 
 <h2>Error codes</h2>
 
-API sends following error codes at different occasions. <a href="https://github.com/77yards/permly-api/tree/master/api-actions/errorCodes.md">Click Here</a> to see list of all error codes
+API sends following error codes at different occasions. <a href="https://github.com/77yards/permly-api/tree/master/api-actions/errorCodes.md">Click Here</a> to see list of all error codes.
