@@ -2,19 +2,18 @@
 /**
  * API library - it allows to process all api calls
  *
- * @copyright	77yards
+ *
+ * @copyright	Simplessus
  *
  * @version	1.0
  */
 
-if(!defined('JSON_UNESCAPED_UNICODE')) define('JSON_UNESCAPED_UNICODE', 256);
-
 class permly_api {
 	var $url;
 	var $action;
-	var $api_key = " -- Specify your key -- ";
+	var $api_key;
 	var $api_version = "1.0";
-	var $api_server_protocol = "http";
+	var $api_server_protocol = "https";
 	var $api_server = "api.permly.com";
 	var $request_logging = false;
 
@@ -22,8 +21,9 @@ class permly_api {
 	 * Constructor of class. set the base url of api server.
 	 *
 	 */	
-	function permly_api(){
-		$this->url = $this->api_server_protocol."://".$this->api_server."/?remote_service=rs_external_api&key=".$this->api_key."&interface=eai_permly&version=".$this->api_version;
+	function permly_api($api_key=''){
+		$this->api_key = $api_key;
+		$this->url = $this->api_server_protocol."://".$this->api_server."/?remote_service=rs_external_api&key=1&interface=eai_permly&version=".$this->api_version;
 	}
 
 	/**
@@ -46,9 +46,10 @@ class permly_api {
 		if(!is_array($postdata) ) $postdata = array();
 		
 		$url = $this->_build_url();
-
+		
 		if(!isset($postdata['ip_address'])) $postdata['ip_address'] = $this->_get_client_ip();
 		if(!isset($postdata['user_agent'])) $postdata['user_agent'] = $this->_get_client_user_agent();
+		$postdata['api_key'] = $this->api_key;
 
 		$ch = curl_init($url);
 
@@ -63,8 +64,8 @@ class permly_api {
 		$return_data = curl_exec($ch);
 
 		return $return_data;
-	}
-
+	}	
+	
 	/**
 	 * Return Client IP.
 	 *
@@ -90,7 +91,7 @@ class permly_api {
 	 */
 	function _get_client_user_agent() {
 		return isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
-	}
+	}	
 		
 	/**
 	 * Encoded array in json data
@@ -98,7 +99,8 @@ class permly_api {
 	 * @return	string
 	 */
 	function _json_encode($data) {
-		return json_encode($data, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
+		return json_encode($data);
+		return json_encode($data, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP);
 	}
 
 	/**
@@ -107,9 +109,9 @@ class permly_api {
 	 * @return	mixed
 	 */
 	function _json_decode($data, $assoc = false) {
-		return json_decode($data, $assoc, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
+		return json_decode($data, $assoc);
+		return json_decode($data, $assoc, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP);
 	}	
-	
 	
 	/**
 	 * Return user data
@@ -203,7 +205,7 @@ class permly_api {
 		$url_key = '';
 		$title_length = 0;
 		$title_pos = 0;
-		
+
 		if( $url_target!='' and !preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url_target))
 			$url_target = 'http://'.$url_target;
 		
@@ -212,7 +214,7 @@ class permly_api {
 			$title_tag = @$match[1];
 			
 			if($title_tag != '') {
-				$url_key = _make_url_string($title_tag);
+				$url_key = $this->make_url_string($title_tag);
 				$title_arr = explode("-",$url_key);
 				$title_length = count($title_arr);
 				if( $title_length > 3 )  {
@@ -270,6 +272,47 @@ class permly_api {
 		$result = '';
 		for($i = 0; $i < $length; $i++) {
 			$result .= $pattern{rand(0,35)};
+		}
+
+		return $result;	
+	}	
+	
+	/**
+	 * Returns a string formatted so it can 
+	 * be used as a valid part of URL.
+	 *
+	 * @see		http://www.php.net/strtr
+	 *
+	 * @param	string	$value
+	 * @return	string
+	 */
+	function make_url_string($value) {
+
+		// Lower
+		$result = strtolower($value); 
+
+		// Replace special chars
+		$char_search = array('Ö', 'Ä', 'Ü', 'ö', 'ä', 'ü', 'ß');
+		$char_replace = array('oe', 'ae', 'ue', 'oe', 'ae', 'ue','ss');
+		$result = trim(str_replace($char_search, $char_replace, $result));
+		$result = str_replace(array('!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '.', '/', ':', ';', '_', '@', '\\', '<', '=', '>', '?', '[', ']', '^', '`', '{', '|', '}', '~'), ' ', $result);
+
+
+		// Verify characters
+		$result = preg_replace('/([^a-z0-9]+)/', '-', $result);
+
+
+		// Reduce hyphen to one
+		$result = preg_replace("#([\-])+#", "\\1", $result);
+
+
+		// No invalid characters at the begin and the end
+		while(strlen($result) > 0 && substr($result, 0, 1) == '-') {
+			$result = substr($result, 1);
+		}
+
+		while(strlen($result) > 0 && (substr($result, -1) == '-' || in_array(substr($result, -1), $char_search))) {
+			$result = substr($result, 0, strlen($result) - 1);
 		}
 
 		return $result;	
