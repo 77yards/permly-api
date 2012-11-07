@@ -4,7 +4,7 @@
 
 1050 - Some required data is missing
 
-1060 - Encoded data in send request is not valid
+1060 - Sent data is not valid
 
 1100 - No valid permly account is associated with API Key
 
@@ -16,7 +16,7 @@
 
 1300 - Due to some reason, system is not able to create record
 
-1350 - No data found in send request
+1350 - No data found in sent request
 
 1400 - Due to some reason, system is not able to delete record
 
@@ -38,13 +38,15 @@
 
 2040 - Invalid user session token
 
-2050 - Invalid user session token
+2045 - Invalid session
+
+2050 - Invalid session token
 
 2060 - User is inactive
 
-2080 - Invalid Application
+2080 - Invalid application
 
-3010 - Invalid Email
+3010 - Invalid email
 
 3020 - Password is too short
 
@@ -66,7 +68,7 @@
 
 4010 - Invalid confirm password while changing password
 
-4020 - Invalid Account
+4020 - Invalid account
 
 4030 - User is not authorized to update account data
 
