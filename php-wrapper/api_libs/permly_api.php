@@ -32,7 +32,11 @@ class permly_api {
 	 * @return	string
 	 */	
 	function _build_url() {
-		$url = $this->url.'&action='.$this->action;
+		// Add transaction ID for better detecting double requests in AUTH server
+		if($GLOBALS['config']['application']['tid'] == '') $GLOBALS['config']['application']['tid'] = rand(0, 10000);
+
+		$url = $this->url.'&action='.$this->action.'&tid='.$GLOBALS['config']['application']['tid'];
+		
 		return $url;
 	}
 	
@@ -292,7 +296,7 @@ class permly_api {
 		$result = strtolower($value); 
 
 		// Replace special chars
-		$char_search = array('Ö', 'Ä', 'Ü', 'ö', 'ä', 'ü', 'ß');
+		$char_search = array('ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½');
 		$char_replace = array('oe', 'ae', 'ue', 'oe', 'ae', 'ue','ss');
 		$result = trim(str_replace($char_search, $char_replace, $result));
 		$result = str_replace(array('!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '.', '/', ':', ';', '_', '@', '\\', '<', '=', '>', '?', '[', ']', '^', '`', '{', '|', '}', '~'), ' ', $result);
